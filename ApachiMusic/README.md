@@ -18,9 +18,10 @@ in windows :
 pip install -r requirements.txt
 ```
 Go and visit `.env` file and change some info :
-```env
+```
 ADMIN_USERNAME=your_admin_username
 ADMIN_PASSWORD=your_admin_passowrd
+SECRET_KEY=your_secret_key
 ```
 Now you can run project easily!
 in linux :
@@ -31,3 +32,5 @@ in windows :
 ```bash
 python app.py
 ```
+
+Important tip : If you are using linux, use venv
