@@ -1,0 +1,19 @@
+@font-face {
+    font-family: IranSans;
+    src: url('/static/font/IRANSansXV.woff');
+}
+
+:root {
+    --card: #2b2b2b;
+    --border: #595959;
+}
+
+* {
+    color: white;
+    font-family: IranSans;
+}
+
+body {
+    background-color: #1c1c1c;
+    margin-top: 100px;
+}
