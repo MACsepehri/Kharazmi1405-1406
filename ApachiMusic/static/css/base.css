@@ -5,7 +5,8 @@
 
 :root {
     --card: #2b2b2b;
-    --border: #595959;
+    /* --border: #595959; */
+    --border: #0042ac;
 }
 
 * {
