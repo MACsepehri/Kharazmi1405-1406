@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
             <GlobalStyle />
             <MainHeader />
             <Routes>
-                <Route path="*" element={<main><App /></main>} />
+                <Route path="*" element={<main><App /><MainFooter /></main>} />
                 <Route path="/" element={<main><App /><MainFooter /></main>} />
                 <Route path="/relativity" element={<main><Relativity /></main>} />
             </Routes>
