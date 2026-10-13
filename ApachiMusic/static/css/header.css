@@ -1,9 +1,0 @@
-header {
-    margin: auto;
-    text-align: center;
-    width: 380px;
-    padding: 10px;
-    border-radius: 80px;
-    background: var(--card);
-    border: 2px solid var(--border);
-}
