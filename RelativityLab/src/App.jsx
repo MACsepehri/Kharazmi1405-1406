@@ -8,7 +8,7 @@ export default function App() {
                 <h1>Relativity Lab</h1>
                 <p>آزمایشگاه اتساع زمان (نسبیت عام)</p>
             </Section>
-            <Section style={{marginTop:'100vh'}}>
+            <Section style={{marginTop:'70vh'}}>
                 <h2>ما دقیقا چه میکنیم؟</h2>
                 <LineHeight>
                     <p>احتمال زیاد نام <strong>انیشتین</strong> را شنیده اید. یکی از کتاب های او <strong>نسبیت عام</strong> است. یکی از موارد جالب این کتاب مربوط</p>

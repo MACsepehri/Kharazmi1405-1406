@@ -37,6 +37,18 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
+export const OuterHeader = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+`;
+
 export const Header = styled.header`
     border: 2px solid var(--border);
     background: var(--card);
@@ -46,7 +58,7 @@ export const Header = styled.header`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 100px auto 0;
+    margin: 30px auto 0;
     text-align: center;
     gap: 10px;
     direction: ltr;
@@ -71,9 +83,6 @@ export const LineHeight = styled.div`
 `
 
 export const Footer = styled.footer`
-    position: absolute;
-    bottom: 100px;
-
     div {
         display: flex;
         gap: 30px;
