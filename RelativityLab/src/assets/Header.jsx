@@ -6,7 +6,7 @@ export default function MainHeader() {
         <Header>
             <div>
                 <div style={{display:'flex',gap:'50px'}}>
-                    <h1>Relativity Lab</h1>
+                    <h2 style={{fontSize:'28px'}}>Relativity Lab</h2>
                     <h3 style={{marginTop:'30px'}}>محاسبه اتساع زمان</h3>
                 </div>
                 <nav dir='rtl' style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>

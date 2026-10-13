@@ -11,10 +11,10 @@ createRoot(document.getElementById('root')).render(
             <GlobalStyle />
             <MainHeader />
             <Routes>
-                <Route path="*" element={<App />} />
-                <Route path="/" element={<App />} />
-                <Route path="/relativity" element={<App />} />
+                <Route path="*" element={<main><App /></main>} />
+                <Route path="/" element={<main><App /></main>} />
+                <Route path="/relativity" element={<main><App /></main>} />
             </Routes>
         </BrowserRouter>
-    </StrictMode>,
+    </StrictMode>
 )

@@ -25,11 +25,15 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
         text-decoration: none;
-        color: #e7e7e7
+        color: #cfcfcf
     }
 
     a:hover {
-        color: #d1d1d1
+        color: #eff9ff
+    }
+
+    main {
+        margin-top: 150px;
     }
 `
 
@@ -37,7 +41,7 @@ export const Header = styled.header`
     border: 2px solid var(--border);
     background: var(--card);
     width: 700px;
-    border-radius: 60px;
+    border-radius: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
