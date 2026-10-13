@@ -100,3 +100,31 @@ export const FooterSpan = styled.span`
     text-align: right;
     margin-top: 40px;
 `
+
+export const RelativityBox = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+`
+
+export const RelativityInput = styled.input`
+    width: 200px;
+    padding: 5px;
+    border-radius: 8px;
+    background: var(--card);
+    border: 2px solid var(--border);
+
+    &:focus {
+        outline: none;
+    }
+`
+
+export const RelativityButton = styled.button`
+    width: 160px;
+    padding: 10px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    margin: auto;
+    cursor: pointer;
+`
