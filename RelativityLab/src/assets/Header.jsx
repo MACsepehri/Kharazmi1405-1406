@@ -3,7 +3,7 @@ import { Header, OuterHeader } from './Base.jsx'
 
 export default function MainHeader() {
     return (
-        <OuterHeader>
+        <OuterHeader className='outer-header'>
             <Header>
                 <div>
                     <div style={{display:'flex',gap:'50px'}}>

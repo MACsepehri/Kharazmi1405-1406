@@ -50,6 +50,7 @@ export const OuterHeader = styled.div`
 `;
 
 export const Header = styled.header`
+    position: static !important;
     border: 2px solid var(--border);
     background: var(--card);
     width: 700px;
@@ -62,7 +63,7 @@ export const Header = styled.header`
     text-align: center;
     gap: 10px;
     direction: ltr;
-`
+`;
 
 export const Section = styled.section`
     width: 100%;
