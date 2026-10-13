@@ -47,6 +47,7 @@ export const OuterHeader = styled.div`
     align-items: center;
     text-align: center;
     z-index: 1000;
+    }
 `;
 
 export const Header = styled.header`
@@ -54,6 +55,8 @@ export const Header = styled.header`
     border: 2px solid var(--border);
     background: var(--card);
     width: 700px;
+    max-width: calc(100% - 32px);
+    box-sizing: border-box;
     border-radius: 80px;
     display: flex;
     flex-direction: column;
@@ -63,6 +66,62 @@ export const Header = styled.header`
     text-align: center;
     gap: 10px;
     direction: ltr;
+    padding: 20px;
+
+    > div {
+        width: 100%;
+    }
+
+    > div > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 30px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 734px) {
+        border-radius: 40px;
+    }
+
+    @media (max-width: 512px) {
+        border-radius: 30px;
+        padding: 20px 12px;
+
+        > div > div {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        nav {
+            gap: 12px;
+        }
+    }
 `;
 
 export const Section = styled.section`
@@ -81,6 +140,9 @@ export const Section = styled.section`
 
 export const LineHeight = styled.div`
     line-height: 0.8;
+    @media (max-width: 895px) {
+        line-height: 1.2;
+    }
 `
 
 export const Footer = styled.footer`
