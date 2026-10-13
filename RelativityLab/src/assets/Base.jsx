@@ -51,3 +51,21 @@ export const Header = styled.header`
     gap: 10px;
     direction: ltr;
 `
+
+export const Section = styled.section`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+`;
+
+export const LineHeight = styled.div`
+    line-height: 0.8;
+`
