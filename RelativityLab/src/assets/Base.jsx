@@ -69,3 +69,25 @@ export const Section = styled.section`
 export const LineHeight = styled.div`
     line-height: 0.8;
 `
+
+export const Footer = styled.footer`
+    position: absolute;
+    bottom: 100px;
+
+    div {
+        display: flex;
+        gap: 30px;
+    }
+`
+
+export const FooterImage = styled.img`
+    margin: auto;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+`
+
+export const FooterSpan = styled.span`
+    text-align: right;
+    margin-top: 40px;
+`
