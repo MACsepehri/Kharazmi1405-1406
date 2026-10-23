@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
-        <BaseHeader>
+        <BaseHeader dir="ltr">
             <div style={{ display: 'flex',flex: '1' }}>
                 <div style={{ display: 'flex',flex: '1' }}>
                     <h1>Math Lab</h1>

@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: var(--background);
         text-align: center;
+        direction: rtl;
     }
 
     a {
@@ -37,6 +38,10 @@ export const GlobalStyle = createGlobalStyle`
     a:hover {
         text-decoration: underline;
     }
+
+    .primary {
+        color: var(--primary);
+    }
 `;
 
 export const BaseHeader = styled.header`
@@ -46,4 +51,15 @@ export const BaseHeader = styled.header`
     background: var(--card);
     margin: auto;
     border: 2px solid var(--border);
+`
+
+export const Section = styled.section`
+    width: 100%;
+`
+
+export const SectionContent = styled.section`
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
 `

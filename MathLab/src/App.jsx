@@ -1,5 +1,9 @@
+import PartOne from "./assets/part/PartOne";
+
 export default function App() {
     return (
-        <div></div>
+        <div>
+            <PartOne />
+        </div>
     )
 }
