@@ -51,15 +51,24 @@ export const BaseHeader = styled.header`
     background: var(--card);
     margin: auto;
     border: 2px solid var(--border);
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
 `
 
 export const Section = styled.section`
     width: 100%;
-`
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+`;
 
-export const SectionContent = styled.section`
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%,-50%);
-`
+export const SectionContent = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
