@@ -9,12 +9,17 @@ export const OuterBox = styled.div`
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    background: #050e1a;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 `
 
-export const InnerBox = styled.div`
-    width: 100%;
+export const Flex = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
 `

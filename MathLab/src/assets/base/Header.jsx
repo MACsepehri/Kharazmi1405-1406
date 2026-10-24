@@ -5,10 +5,10 @@ export default function Header() {
     return (
         <BaseHeader dir="ltr">
             <div style={{ display: 'flex',flex: '1' }}>
-                <div style={{ display: 'flex',flex: '1' }}>
+                <div style={{ display: 'flex',flex: '1',marginTop:'20px' }}>
                     <h1>Math Lab</h1>
                 </div>
-                <div style={{ marginTop:'15px' }}>
+                <div style={{ marginTop:'35px' }}>
                     <p>آزمایشگاه ریاضی</p>
                 </div>
             </div>
