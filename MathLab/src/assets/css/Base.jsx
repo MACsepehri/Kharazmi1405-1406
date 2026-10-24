@@ -3,7 +3,7 @@ import styled,{ createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: IranSans;
-        src: url('font/font.woff') format('woff');
+        src: url('/font/font.woff') format('woff');
     }
 
     * {
@@ -13,15 +13,18 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        --background: #0D1117;
-        --card: #161B22;
-        --border: #30363D;
-        --dark-blue-border: #24364b;
-        --dark-blue-card: #121d2a;
-        --sec-text: #8B949E;
-        --primary: #3979c3;
-        --success: #3FB950;
-        --danger: #F85149;
+        --background: #080808;
+        --card: #111111;
+        --border: #303030;
+
+        --dark-border: #414141;
+        --dark-card: #0D0D0D;
+
+        --sec-text: #858585;
+        --primary: #EAEAEA;
+
+        --success: #52D68A;
+        --danger: #FF5C5C;
     }
 
     body {
@@ -62,6 +65,18 @@ export const BaseHeader = styled.header`
     position: absolute;
     right: 50%;
     transform: translateX(50%);
+    display: flex;
+    flex: 1;
+
+    @media (max-width: 500px) {
+        width: 97%;
+    }
+`
+
+export const Image = styled.img`
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 20px;
 `
 
 export const Section = styled.section`
@@ -80,3 +95,10 @@ export const SectionContent = styled.div`
     align-items: center;
     justify-content: center;
 `;
+
+export const Flex = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+`

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Section, SectionContent } from "../css/Base";
-import { CloseButton, Flex, OuterBox } from "../css/MainPage";
+import { Section, SectionContent, Flex, Image } from "../css/Base";
+import { CloseButton, OuterBox } from "../css/MainPage";
 import { Link } from "react-router-dom";
 
 const shapes = [
@@ -50,9 +50,9 @@ function Modal({ title, description, baseUrl, onClose }) {
                     overflowY: "auto",
                     padding: "24px",
                     boxSizing: "border-box",
-                    border: "2px solid var(--dark-blue-border)",
+                    border: "2px solid var(--dark-border)",
                     borderRadius: "20px",
-                    background: "#050e1a",
+                    background: "var(--dark-card)",
                     color: "white"
                 }}>
                 <h2>{title}</h2>
@@ -73,7 +73,7 @@ function Modal({ title, description, baseUrl, onClose }) {
                                 color: "white",
                                 textDecoration: "none",
                                 padding: "12px",
-                                border: "1px solid var(--dark-blue-border)",
+                                border: "1px solid var(--dark-border)",
                                 borderRadius: "10px",
                                 textAlign: "center"
                             }}>
@@ -105,7 +105,10 @@ export default function PartTwo() {
                                 baseUrl: "/project/round"
                             })
                         }>
-                        <h3>محیط اشکال</h3>
+                        <div>
+                            <Image src="/image/round.png" />
+                            <h3>محیط اشکال</h3>
+                        </div>
                     </OuterBox>
 
                     <OuterBox
@@ -116,24 +119,36 @@ export default function PartTwo() {
                                 baseUrl: "/project/area"
                             })
                         }>
-                        <h3>مساحت اشکال</h3>
+                        <div>
+                            <Image src="/image/area.png" />
+                            <h3>مساحت اشکال</h3>
+                        </div>
                     </OuterBox>
 
                     <Link className="no-decoration" to="/project/density">
                         <OuterBox>
-                            <h3>چگالی</h3>
+                            <div>
+                                <Image src="/image/density.png" />
+                                <h3>چگالی</h3>
+                            </div>
                         </OuterBox>
                     </Link>
 
                     <Link className="no-decoration" to="/project/mass">
                         <OuterBox>
-                            <h3>جرم</h3>
+                            <div>
+                                <Image src="/image/weight.png" />
+                                <h3>جرم</h3>
+                            </div>
                         </OuterBox>
                     </Link>
 
                     <Link className="no-decoration" to="/project/weight">
                         <OuterBox>
-                            <h3>وزن</h3>
+                            <div>
+                                <Image src="/image/mass.png" />
+                                <h3>وزن</h3>
+                            </div>
                         </OuterBox>
                     </Link>
                 </Flex>
