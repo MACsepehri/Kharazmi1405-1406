@@ -30,6 +30,10 @@ export const GlobalStyle = createGlobalStyle`
         direction: rtl;
     }
 
+    button {
+        cursor: pointer;
+    }
+
     a {
         color: var(--primary);
         text-decoration: none;
@@ -41,6 +45,10 @@ export const GlobalStyle = createGlobalStyle`
 
     .primary {
         color: var(--primary);
+    }
+
+    .no-decoration,.no-decoration:hover {
+        text-decoration: none;
     }
 `;
 

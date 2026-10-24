@@ -23,3 +23,13 @@ export const Flex = styled.div`
     gap: 30px;
     justify-content: center;
 `
+
+export const CloseButton = styled.button`
+    color: white;
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #e50101;
+    background: #9b0d0d;
+    margin-top: 20px;
+`
