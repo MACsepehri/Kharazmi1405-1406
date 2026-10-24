@@ -7,16 +7,26 @@ export default function Weight() {
             title="محاسبه وزن"
             input_obj={() => (
                 <div>
-                    <InputBox type="number" id="weight" placeholder="جرم (گرم)" />
+                    <InputBox type="number" id="mass" placeholder="جرم (گرم)" />
                     <br /><br />
-                    <InputBox type="number" id="g-fource" placeholder="شتاب جاذبه (مثلاً زمین: 10)" /><br />
+                    <InputBox type="number" id="g-fource" placeholder="شتاب جاذبه (مثلاً زمین: 9.81)" /><br />
                     <pre id="res"></pre>
                 </div>
             )}
             action={() => {
-                let weight = Number(document.getElementById('weight').value);
+                let mass = Number(document.getElementById('mass').value);
                 let gfource = Number(document.getElementById('g-fource').value);
-                document.getElementById('res').innerText = `${weight * gfource} نیوتن`;
+                let result = document.getElementById('res');
+                if (
+                    mass === "" ||
+                    gfource === "" ||
+                    mass <= 0 ||
+                    gfource < 0
+                ) {
+                    result.innerText = "لطفاً مقادیر معتبر وارد کنید.";
+                    return;
+                }
+                result.innerText = `${mass * gfource} نیوتن`;
             }}
             formula={
                 ['وزن',`W = mg (m * g)

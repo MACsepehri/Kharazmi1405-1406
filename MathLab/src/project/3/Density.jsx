@@ -16,7 +16,17 @@ export default function Density() {
             action={() => {
                 let weight = Number(document.getElementById('weight').value);
                 let mass = Number(document.getElementById('mass').value);
-                document.getElementById('res').innerText = `${weight} / ${mass} = ${weight/mass}`;
+                let result = document.getElementById('res');
+                if (
+                    weight === "" ||
+                    mass === "" ||
+                    mass <= 0 ||
+                    weight < 0
+                ) {
+                    result.innerText = "لطفاً مقادیر معتبر وارد کنید.";
+                    return;
+                }
+                result.innerText = `${weight} / ${mass} = ${weight/mass}`;
             }}
             formula={
                 ['چگالی','ρ = m/v']

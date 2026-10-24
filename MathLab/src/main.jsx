@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Header from './assets/base/Header.jsx'
 import Weight from './project/3/Weight.jsx'
 import Density from './project/3/Density.jsx'
+import Mass from './project/3/Mass.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
                 {/*  */}
                 <Route path="/project/weight" element={<Weight />} />
                 <Route path="/project/density" element={<Density />} />
+                <Route path="/project/mass" element={<Mass />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>
