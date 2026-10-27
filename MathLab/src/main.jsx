@@ -8,7 +8,9 @@ import Weight from './project/3/Weight.jsx'
 import Density from './project/3/Density.jsx'
 import Mass from './project/3/Mass.jsx'
 import RoundRender from './project/RoundRender.jsx'
+import AreaRender from './project/AreaRender.jsx'
 import { round_routes, round_input_obj, round_calc } from './assets/data/RoundCalc.jsx'
+import { area_routes, area_input_obj, area_calc } from './assets/data/AreaCalc.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -32,6 +34,18 @@ createRoot(document.getElementById('root')).render(
                                 title={route[1]}
                                 input_obj={round_input_obj[index]}
                                 calc={round_calc[index]}
+                            />
+                        }/>
+                ))}
+                {area_routes.map((route, index) => (
+                    <Route
+                        key={route[0]}
+                        path={`/project/area/${route[0]}`}
+                        element={
+                            <AreaRender
+                                title={route[1]}
+                                input_obj={area_input_obj[index]}
+                                calc={area_calc[index]}
                             />
                         }/>
                 ))}
