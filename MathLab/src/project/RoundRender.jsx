@@ -1,11 +1,7 @@
-import { useState } from "react";
-import FormulaModal from "../assets/base/Modal";
 import { Section, SectionContent } from "../assets/css/Base";
 import { ActionButton, InputBox } from "../assets/css/ProjectStyle";
 
 export default function RoundRender({ title, input_obj, calc }) {
-    const [showFormula, setShowFormula] = useState(false);
-    
     function calculate() {
         let res = calc();
         let res_var = document.getElementById('res');
@@ -36,14 +32,10 @@ export default function RoundRender({ title, input_obj, calc }) {
 
                 <div>
                     <ActionButton onClick={calculate}>
-                        محاسبه
-                    </ActionButton>
-                </div>
-
-                {showFormula && (
-                    <FormulaModal formula_name={formula[0]} formula={formula[1]} onClose={() => setShowFormula(false)}/>
-                )}
-            </SectionContent>
-        </Section>
+                    محاسبه
+                </ActionButton>
+            </div>
+        </SectionContent>
+    </Section>
     );
 }
