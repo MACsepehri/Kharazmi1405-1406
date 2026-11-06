@@ -68,8 +68,18 @@ export const BaseHeader = styled.header`
     display: flex;
     flex: 1;
 
-    @media (max-width: 500px) {
-        width: 97%;
+    @media (max-width: 688px) {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        flex: 0;
+
+        div {
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+        }
     }
 `
 
@@ -101,4 +111,10 @@ export const Flex = styled.div`
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+`
+
+export const FooterImage = styled.img`
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 100%;
 `
