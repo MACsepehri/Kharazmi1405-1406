@@ -32,7 +32,63 @@ export const round_routes = [
     ['ellipse','بیضی'],['pentagon','پنج ضلعی'],['heptagon','هفت ضلعی'],
     ['nonagon','نه ضلعی'],['decagon','ده ضلعی'],['kite','بادبادک'],
     ['semicircle','نیم‌دایره'],['quarter_circle','ربع دایره']
-]
+];
+
+const renderMultipleInputs = (container, count) => {
+    container.replaceChildren();
+
+    for (let i = 0; i < count; i += 3) {
+        const group = document.createElement("div");
+        group.style.marginBottom = "12px";
+
+        const root = createRoot(group);
+
+        root.render(
+            <Flex>
+                {Array.from(
+                    { length: Math.min(3, count - i) },
+                    (_, j) => (
+                        <InputBox
+                            key={i + j}
+                            type="number"
+                            className="width"
+                            placeholder={`طول ${i + j + 1}`}
+                        />
+                    )
+                )}
+            </Flex>
+        );
+
+        container.appendChild(group);
+    }
+};
+
+const createMultipleInputBox = (count, defaultPlaceholder = "طول ۱") => (
+    <div className="calc-inputs">
+        <label>
+            <input
+                type="checkbox"
+                onChange={(e) => {
+                    const container = document.getElementById("width-inputs");
+                    renderMultipleInputs(container, e.target.checked ? count : 1);
+                }}
+            />
+            {count} ورودی
+        </label>
+
+        <br /><br />
+
+        <div id="width-inputs">
+            <Flex>
+                <InputBox
+                    type="number"
+                    className="width"
+                    placeholder={defaultPlaceholder}
+                />
+            </Flex>
+        </div>
+    </div>
+);
 
 export const round_input_obj = [
     <div className="calc-inputs">
@@ -40,7 +96,6 @@ export const round_input_obj = [
         <br /><br />
         <InputBox type="number" id="length" placeholder="عرض" />
     </div>,
-
 
     <div className="calc-inputs">
         <Flex>
@@ -60,355 +115,51 @@ export const round_input_obj = [
         <InputBox type="number" id="width" placeholder="طول" />
     </div>,
 
+    createMultipleInputBox(6, "قطر"),
+
+    createMultipleInputBox(8),
+
+    createMultipleInputBox(3),
+
     <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 6 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            6 ورودی
-        </label>
-
+        <InputBox type="number" id="width" placeholder="طول" />
         <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="قطر" />
-            </Flex>
-        </div>
+        <InputBox type="number" id="height" placeholder="عرض" />
     </div>,
 
     <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 8 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            8 ورودی
-        </label>
-
+        <InputBox type="number" id="diameter" placeholder="طول" />
         <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
     </div>,
 
     <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 3 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <div>
-                                <Flex>
-                                    {Array.from(
-                                        { length: Math.min(3, count - i) },
-                                        (_, j) => (
-                                            <InputBox
-                                                key={i + j}
-                                                type="number"
-                                                className="width"
-                                                placeholder={`طول ${i + j + 1}`}
-                                            />
-                                        )
-                                    )}
-                                </Flex><br />
-                            </div>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            3 ورودی
-        </label>
-
+        <InputBox type="number" id="major-axis" placeholder="نیم‌محور بزرگ" />
         <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
-    </div>,
-
-    <div className="calc-inputs">
-        <InputBox type="number" id="width" placeholder="ضلع 1" /><br /><br />
-        <InputBox type="number" id="height" placeholder="ضلع 2" />
-    </div>,
-
-    <div className="calc-inputs">
-        <InputBox type="number" id="diameter" placeholder="طول" /><br /><br />
-    </div>,
-
-    <div className="calc-inputs">
-        <InputBox type="number" id="major-axis" placeholder="نیم‌محور بزرگ" /><br /><br />
         <InputBox type="number" id="minor-axis" placeholder="نیم‌محور کوچک" />
     </div>,
 
+    createMultipleInputBox(5),
+
+    createMultipleInputBox(7),
+
+    createMultipleInputBox(9),
+
+    createMultipleInputBox(10),
+
     <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 5 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            5 ورودی
-        </label>
-
+        <InputBox type="number" id="kite-a" placeholder="ضلع 1" />
         <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
-    </div>,
-
-    <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 7 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            7 ورودی
-        </label>
-
-        <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
-    </div>,
-
-    <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 9 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            9 ورودی
-        </label>
-
-        <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
-    </div>,
-
-    <div className="calc-inputs">
-        <label>
-            <input
-                type="checkbox"
-                onChange={(e) => {
-                    const container = document.getElementById("width-inputs");
-                    const count = e.target.checked ? 10 : 1;
-
-                    container.replaceChildren();
-
-                    for (let i = 0; i < count; i += 3) {
-                        const group = document.createElement("div");
-                        const root = createRoot(group);
-
-                        root.render(
-                            <Flex>
-                                {Array.from(
-                                    { length: Math.min(3, count - i) },
-                                    (_, j) => (
-                                        <InputBox
-                                            key={i + j}
-                                            type="number"
-                                            className="width"
-                                            placeholder={`طول ${i + j + 1}`}
-                                        />
-                                    )
-                                )}
-                            </Flex>
-                        );
-
-                        container.appendChild(group);
-                    }
-                }}
-            />
-            10 ورودی
-        </label>
-
-        <br /><br />
-
-        <div id="width-inputs">
-            <Flex>
-                <InputBox type="number" className="width" placeholder="طول ۱" />
-            </Flex>
-        </div>
-    </div>,
-
-    <div className="calc-inputs">
-        <InputBox type="number" id="kite-a" placeholder="ضلع 1" /><br /><br />
         <InputBox type="number" id="kite-b" placeholder="ضلع 2" />
     </div>,
 
     <div className="calc-inputs">
-        <InputBox type="number" id="radius" placeholder="شعاع" /><br /><br />
+        <InputBox type="number" id="radius" placeholder="شعاع" />
+        <br /><br />
     </div>,
 
     <div className="calc-inputs">
-        <InputBox type="number" id="radius" placeholder="شعاع" /><br /><br />
+        <InputBox type="number" id="radius" placeholder="شعاع" />
+        <br /><br />
     </div>
 ];
 
@@ -441,7 +192,7 @@ export const round_calc = [
     },
 
     () => {
-        const width = Number(document.getElementById('width').value);
+        const width = Number(document.getElementById("width").value);
 
         if (
             document.getElementById("width").value === "" ||
@@ -450,7 +201,7 @@ export const round_calc = [
             return [null, false];
         }
 
-        return [width*4,true]
+        return [width * 4, true];
     },
 
     () => calculatePolygonPerimeter(6),
@@ -458,8 +209,8 @@ export const round_calc = [
     () => calculatePolygonPerimeter(3),
 
     () => {
-        let width = Number(document.getElementById('width').value);
-        let height = Number(document.getElementById('height').value);
+        const width = Number(document.getElementById("width").value);
+        const height = Number(document.getElementById("height").value);
 
         if (
             document.getElementById("width").value === "" ||
@@ -470,11 +221,11 @@ export const round_calc = [
             return [null, false];
         }
 
-        return [2*width + 2*height, true]
+        return [2 * width + 2 * height, true];
     },
 
     () => {
-        let diameter = Number(document.getElementById('diameter').value);
+        const diameter = Number(document.getElementById("diameter").value);
 
         if (
             document.getElementById("diameter").value === "" ||
@@ -483,7 +234,7 @@ export const round_calc = [
             return [null, false];
         }
 
-        return [diameter*Math.PI, true]
+        return [diameter * Math.PI, true];
     },
 
     () => {
@@ -499,7 +250,13 @@ export const round_calc = [
             return [null, false];
         }
 
-        return [Math.PI * (3 * (major + minor) - Math.sqrt((3 * major + minor) * (3 * minor + major))), true];
+        return [
+            Math.PI * (
+                3 * (major + minor) -
+                Math.sqrt((3 * major + minor) * (3 * minor + major))
+            ),
+            true
+        ];
     },
 
     () => calculatePolygonPerimeter(5),
